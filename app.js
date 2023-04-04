@@ -130,14 +130,16 @@ startButton.addEventListener("click", ()=> {
     initializer();
 });
 
-finishButton.addEventListener("click", function finishGame() {
-    /** 시작버튼만 활성화 */
-    controlsContainer.classList.remove("hide");
-    finishButton.classList.add("hide");
-    startButton.classList.remove("hide");
-    /** 타이머 제거, 리셋 */
-    clearInterval(interval);
-});
+finishButton.addEventListener("click",
+    (finishGame = ()=> {
+        /** 시작버튼만 활성화 */
+        controlsContainer.classList.remove("hide");
+        finishButton.classList.add("hide");
+        startButton.classList.remove("hide");
+        /** 타이머 제거, 리셋 */
+        clearInterval(interval);
+    })
+);
 
 /** cardValues 설정, 게임코드 불러오기 */
 const initializer = ()=> {
