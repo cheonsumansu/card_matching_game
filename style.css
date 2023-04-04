@@ -1,0 +1,110 @@
+/**
+진한 2d2727
+연한 413543
+보라 8f43ee
+노랑 f0eb8d
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #2d2727;
+}
+.wrapper {
+    box-sizing: content-box;
+    background-color: #dfdfdf;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    left: 50%;
+    top: 50%;
+    border-radius: 0.6em;
+    padding: 3em;
+}
+.game-container {
+    position: relative;
+    width: 100%;
+    display: grid;
+    gap: 1em;
+}
+.stats-container {
+    text-align: right;
+    margin-bottom: 1.2em;
+}
+.stats-container span {
+    font-weight: 600;
+}
+.card-container {
+    position: relative;
+    width: 6.25em;
+    height: 6.25em;
+    cursor: pointer;
+}
+.card-before, .card-after {
+    position: absolute;
+    border-radius: 0.2em;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0.1em solid #2d2727;
+    transition: transform 0.7s ease-out;
+    backface-visibility: hidden;
+}
+.card-before {
+    background-color: #2d2727;
+    font-size: 3em;
+    font-weight: 600;
+    color: #dfdfdf;
+}
+.card-after {
+    background-color: #dfdfdf;
+    transform: rotateY(180deg);
+}
+.card-container.flipped .card-before {
+    transform: rotateY(180deg);
+}
+.card-container.flipped .card-after {
+    transform: rotateY(0deg);
+}
+.controls-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    background-color: #2d2727;
+    top: 0;
+}
+button {
+    border: none;
+    border-radius: 0.3em;
+    padding: 1em 1.5em;
+    cursor: pointer;
+}
+#finish {
+    font-size: 1.1em;
+    display: block;
+    margin: 1.1em auto 0 auto;
+    background-color: #413543;
+    color: #dfdfdf;
+}
+.controls-container button {
+    font-size: 1.3em;
+}
+.hide {
+    display: none;
+}
+#result {
+    text-align: center;
+    margin-bottom: 4em;
+    color: #dfdfdf;
+}
+#result h3 {
+    margin-top: 1em;
+}
